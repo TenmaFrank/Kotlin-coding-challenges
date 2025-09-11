@@ -1,6 +1,7 @@
+
+import NumberChallenges.*
 import StringsChallenges.*
 
 fun main(args: Array<String>) {
-    println(C15ReverseWordString().reversedWords("hello world"))
-    println(C15ReverseWordString().challenge15("hola mundo"))
+    println(C20NumberIsPrime().checkPrime(16777259))
 }
