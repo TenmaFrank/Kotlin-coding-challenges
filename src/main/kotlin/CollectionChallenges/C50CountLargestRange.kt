@@ -16,21 +16,31 @@ class C50CountLargestRange {
 
 
     fun foundRange(input: Array<Int>): String{
+        //i do it brute force calculating for every number in array
         var aux = 0
-        var firstIndex: Int
+        var firstIndex = 0
         var lastSum = 0
         var lastRange = " "
 
+        //run over every number
         for (i in input.indices){
+            //if the current numer is greater than 0 means you can sum
             if (input[i] > 0){
-                firstIndex = i
+                //add the current value to aux
                 aux += input[i]
+                //if the aux is greater than the lastsum it means aux is the new last sum wich is the best sum
                 if (aux > lastSum){
+                    //store the value
                     lastSum = aux
+                    //and the range will be the first index and the current index
                     lastRange = "$firstIndex .. $i"
                 }
+                //if the current number is less tha 0 means this will be our bound
+                // so now need to start adding again
             } else {
+                //now our first index will be de last were broke the best range
                 firstIndex = i
+                //reset aux
                 aux = 0
                 }
             }
